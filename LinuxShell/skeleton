@@ -1,0 +1,47 @@
+#!/bin/bash
+# variables $1 is taken from the prompt
+rootPath="/home/$USER/"
+folderPath="/home/$USER/$1"
+
+# create client directory
+mkdir $rootPath/$1
+mkdir $folderPath/css
+mkdir $folderPath/js
+mkdir $folderPath/assets
+mkdir $folderPath/assets/images
+
+if [ $2 ]; then # use external index.html code
+
+    echo ouch # joke??
+    touch $folderPath/super_index.html
+    cat $rootPath/index.html > $folderPath/super_index.html
+    chmod 777 $folderPath/index.html
+
+else # use included index.html code 
+
+	echo smooth
+
+fi
+
+touch $folderPath/js/site.js
+# write our js
+echo // this is where you write your javascript 1> $folderPath/js/site.js
+touch $folderPath/css/site.css
+touch $folderPath/index.html
+chmod 777 $folderPath/index.html # changes permissions
+# ll $folderPath/index.html 
+echo "
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>" 1> $folderPath/index.html
+echo "Html skeleton created for:" $1 # success!
+
+code $folderPath/$1 # or code $folderPath/$1
