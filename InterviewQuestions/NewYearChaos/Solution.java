@@ -32,7 +32,7 @@ public class Solution {
                 } 
             }
         }
-        System.out.println(Arrays.toString(q));
+        //System.out.println(Arrays.toString(q));
         System.out.println(swap);
     }
 

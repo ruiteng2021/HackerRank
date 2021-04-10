@@ -1,0 +1,10 @@
+#!/bin/bash
+counter=1
+while [ $counter -lt 100 ]
+do
+    if [ $((counter%2)) -eq 1 ]
+    then
+        echo "$counter"
+    fi
+    counter=`expr $counter + 1`
+done
