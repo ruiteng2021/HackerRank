@@ -1,0 +1,7 @@
+#!/bin/bash
+result=()
+while read line
+do
+    result+=($line)
+done
+echo ${result[@]:3:5}
