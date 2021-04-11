@@ -1,0 +1,13 @@
+#!/bin/bash
+# result=()
+# while read line && [ "$line" != "" ]
+# do
+#     result=("${result[@]}" $line)
+#     # echo $result
+# done
+# result=("${result[@]}" "${result[@]}" "${result[@]}")
+# echo ${result[@]}
+
+array=($(cat))
+Total=("${array[@]}" "${array[@]}" "${array[@]}")
+echo ${Total[@]}
