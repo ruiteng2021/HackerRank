@@ -33,8 +33,8 @@ function readLine() {
 
 function activityNotifications(expenditure, d) {
     // Write your code here
-    console.log(d);
-    console.log(expenditure);
+    // console.log(d);
+    // console.log(expenditure);
     let newArr = expenditure.filter((element, index) => index >= 3 && index <= 5);
     // let unique = [...new Set(expenditure)];
     console.log(newArr);
@@ -46,12 +46,32 @@ function activityNotifications(expenditure, d) {
     console.log("num3[2] = " + num3[2]);        // find third biggest number
     var index = expenditure.indexOf(num3[2])    // find index of the 3rd biggest number
     console.log("index = " + index);
-    // var indexes = find(num3[2],expenditure);
     const indexOfAll = (arr, val) => arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc), []);
     var indexes = indexOfAll(expenditure,  num3[2]);  // find all indexes of the 3rd biggest number
     console.log(indexes);
     // return d;
 
+
+    // Four Different Ways to Search an Array in JavaScript
+    // Array.find()
+    const array_find = [10, 11, 3, 20, 5];
+    const greaterThanTen_find = array_find.find(element => element > 10);    
+    console.log(greaterThanTen_find)//11
+
+    // Array.includes()
+    const array_includes = [10, 11, 3, 20, 5];
+    const includesTwenty = array_includes.includes(20);    
+    console.log(includesTwenty)//true
+
+    // Array.indexOf()
+    const array_indexOf = [10, 11, 3, 20, 5];
+    const indexOfThree = array_indexOf.indexOf(3);
+    console.log(indexOfThree)//2
+
+    // Array.filter()
+    const array_filter = [10, 11, 3, 20, 5];
+    const greaterThanTen = array_filter.filter(element => element > 10);    
+    console.log(greaterThanTen) //[11, 20]
 }
 
 function main() {
