@@ -1,0 +1,7 @@
+brew install node
+
+debug: with Javascript Debugger(Nightly)
+
+ctrl D to trigger end event
+
+run with command: node filename.js
