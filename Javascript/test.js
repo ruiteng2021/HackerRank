@@ -12,7 +12,7 @@ process.stdin.on('data', function(inputStdin) {
     inputString += inputStdin;
 });
 
-process.stdin.on('end', function() {
+process.on('SIGINT', function() {
     inputString = inputString.split('\n');
 
     main();

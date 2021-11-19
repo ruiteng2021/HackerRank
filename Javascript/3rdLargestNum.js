@@ -12,7 +12,7 @@ process.stdin.on('data', function(inputStdin) {
     inputString += inputStdin;
 });
 
-process.stdin.on('end', function() {
+process.on('SIGINT', function() {
     inputString = inputString.split('\n');
 
     main();
@@ -33,7 +33,24 @@ function readLine() {
 
 function activityNotifications(expenditure, d) {
     // Write your code here
-    console.log("XXXX");
+    console.log(d);
+    console.log(expenditure);
+    let newArr = expenditure.filter((element, index) => index >= 3 && index <= 5);
+    // let unique = [...new Set(expenditure)];
+    console.log(newArr);
+    // console.log(unique);
+
+    // Find the third largest number in Array
+    let unique = [...new Set(expenditure)];     // remove duplications
+    let num3= unique.sort((a, b) => b-a);       // order Decendening
+    console.log("num3[2] = " + num3[2]);        // find third biggest number
+    var index = expenditure.indexOf(num3[2])    // find index of the 3rd biggest number
+    console.log("index = " + index);
+    // var indexes = find(num3[2],expenditure);
+    const indexOfAll = (arr, val) => arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc), []);
+    var indexes = indexOfAll(expenditure,  num3[2]);  // find all indexes of the 3rd biggest number
+    console.log(indexes);
+    // return d;
 
 }
 

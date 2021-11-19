@@ -5,3 +5,7 @@ debug: with Javascript Debugger(Nightly)
 ctrl D to trigger end event
 
 run with command: node filename.js
+
+third biggest number
+9 5
+2 3 4 2 3 6 8 4 5 2 2 5
