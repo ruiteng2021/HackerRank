@@ -23,32 +23,18 @@ function readLine() {
 }
 
 /*
- * Complete the 'maximumToys' function below.
+ * Complete the 'activityNotifications' function below.
  *
  * The function is expected to return an INTEGER.
  * The function accepts following parameters:
- *  1. INTEGER_ARRAY prices
- *  2. INTEGER k
+ *  1. INTEGER_ARRAY expenditure
+ *  2. INTEGER d
  */
 
-function maximumToys(prices, k) {
+function activityNotifications(expenditure, d) {
     // Write your code here
-    console.log("XXXXXXXX");
-    prices.sort((a, b) => a - b);
-    var output = 0;
-    var sum = prices[0];
-    if (sum <= k)
-        output++;
+    console.log("XXXX");
 
-    for(var i=1; i<prices.length; i++) {
-        sum = sum + prices[i];
-        if (sum <= k)
-        {
-            output++;
-        }
-    }
-    console.log(output);
-    return output;
 }
 
 function main() {
@@ -58,11 +44,11 @@ function main() {
 
     const n = parseInt(firstMultipleInput[0], 10);
 
-    const k = parseInt(firstMultipleInput[1], 10);
+    const d = parseInt(firstMultipleInput[1], 10);
 
-    const prices = readLine().replace(/\s+$/g, '').split(' ').map(pricesTemp => parseInt(pricesTemp, 10));
+    const expenditure = readLine().replace(/\s+$/g, '').split(' ').map(expenditureTemp => parseInt(expenditureTemp, 10));
 
-    const result = maximumToys(prices, k);
+    const result = activityNotifications(expenditure, d);
 
     ws.write(result + '\n');
 
