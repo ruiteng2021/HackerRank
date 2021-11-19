@@ -8,3 +8,17 @@ for ((i = 0 ; i < $num ; i++)); do
 done
 
 printf %.3f $(echo "$sum/$num" | bc -l)
+echo -e "\r"
+
+
+
+xxx=$( grep 'twitter.com' file)
+
+
+#echo $xxx | grep -aob '/' | grep -oE '[0-9]+'
+test=$( echo $xxx | grep -aob '/' | grep -oE '[0-9]+' )
+
+echo $test
+
+myvar='abc'
+printf '%s\n' "$myvar" | cut -c2
